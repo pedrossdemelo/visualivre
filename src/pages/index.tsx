@@ -6,10 +6,10 @@ export default function Home({
   categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Styled.Root>
+    <StyledRoot>
       <Sidebar categories={categories} />
       <MainContent />
-    </Styled.Root>
+    </StyledRoot>
   );
 }
 
@@ -24,13 +24,9 @@ export async function getStaticProps() {
   };
 }
 
-const Styled = {
-  Root: styled.div`
-    display: flex;
-    flex-flow: row nowrap;
-    height: 100vh;
-    background-color: var(--bg-1);
-  `,
-
-  Content: styled.div``,
-};
+const StyledRoot = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100vh;
+  background-color: var(--bg-1);
+`;

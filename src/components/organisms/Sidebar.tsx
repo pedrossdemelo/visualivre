@@ -1,18 +1,44 @@
-import React from "react";
+import { useAppDispatch, useAppSelector } from "@store";
+import { setCategory } from "@store/search";
+import React, { ChangeEvent } from "react";
 import styled from "styled-components";
 
 export default function Sidebar({ categories }: SidebarProps) {
+  const dispatch = useAppDispatch();
+  const selectedCategory = useAppSelector(state => state.search.category);
+
+  function selectCategory(e: ChangeEvent<HTMLInputElement>) {
+    console.log(e.target.value, selectedCategory);
+    if (e.target.value === selectedCategory) {
+      dispatch(setCategory(""));
+      return;
+    }
+    dispatch(setCategory(e.target.value));
+  }
+
   return (
-    <Styled.Sidebar>
-      <Styled.Heading>VisuaLivre</Styled.Heading>
-      <Styled.CategoryList>
+    <StyledSidebar>
+      <StyledHeading>🧐 VisuaLivre</StyledHeading>
+      <StyledCategories role="radiogroup">
         {categories.slice(0, -1).map(category => (
-          <Styled.CategoryItem key={category.id}>
+          <StyledCategoryLabel
+            aria-checked={category.id === selectedCategory}
+            key={category.id}
+          >
+            <StyledCategoryRadio
+              checked={category.id === selectedCategory}
+              onChange={selectCategory}
+              name="category"
+              value={category.id}
+              type="checkbox"
+              aria-hidden="true"
+              tabIndex={-1}
+            />
             {category.name}
-          </Styled.CategoryItem>
+          </StyledCategoryLabel>
         ))}
-      </Styled.CategoryList>
-    </Styled.Sidebar>
+      </StyledCategories>
+    </StyledSidebar>
   );
 }
 
@@ -25,20 +51,45 @@ interface SidebarProps {
   categories: Category[];
 }
 
-const Styled = {
-  Sidebar: styled.aside`
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: var(--bg-2);
-    width: min(75vw, 17rem);
-    overflow-x: hidden;
-  `,
+const StyledSidebar = styled.aside`
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--bg-2);
+  width: min(75vw, 20rem);
+  overflow-x: hidden;
+`;
 
-  Heading: styled.h1`
-    font-size: var(--fs-xxl);
-  `,
+const StyledHeading = styled.h1`
+  padding: 1.25rem 2rem;
+  font-size: var(--fs-xxl);
+`;
 
-  CategoryList: styled.ul``,
+const StyledCategoryLabel = styled.label`
+  display: block;
+  color: var(--fg-2);
+  cursor: pointer;
+  user-select: none;
+  line-height: 2.5rem;
+  padding: 0 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: var(--worksans);
+  font-weight: 500;
+  height: 2.5rem;
+  &:hover {
+    background-color: var(--bg-3);
+    color: var(--fg-1);
+  }
+  &[aria-checked="true"] {
+    background-color: var(--selection);
+    font-weight: 600;
+    color: var(--fg-1);
+  }
+`;
 
-  CategoryItem: styled.li``,
-};
+const StyledCategories = styled.form``;
+
+const StyledCategoryRadio = styled.input`
+  appearance: none;
+`;

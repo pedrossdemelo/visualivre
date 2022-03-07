@@ -29,7 +29,7 @@ export default css`
     --fs-md: 1rem;
     --fs-lg: 1.125rem;
     --fs-xl: 1.25rem;
-    --fs-xxl: 1.5rem;
+    --fs-xxl: 1.75rem;
     --fs-heading: 2rem;
 
     --rounded: 0.25rem;
@@ -37,7 +37,9 @@ export default css`
     --rounded-lg: 0.5rem;
     --rounded-xl: 0.75rem;
 
-    --transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition: all 0.175s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition-colors: color background-color border-color 0.175s
+      cubic-bezier(0.645, 0.045, 0.355, 1);
 
     --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
@@ -51,7 +53,7 @@ export default css`
     --bg-2: #202020;
     --bg-3: #404040;
     --fg-3: #616060;
-    --fg-2: #a3a3a3;
+    --fg-2: #acacac;
     --fg-1: #f5f5f5;
     --yellow-1: #facc15;
     --yellow-2: #eab308;
