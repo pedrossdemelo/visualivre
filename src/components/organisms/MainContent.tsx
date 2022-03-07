@@ -5,7 +5,9 @@ import React from "react";
 
 export default function MainContent() {
   // TODO: extract this to custom hook
-  const { query, sort, filters } = useAppSelector(state => state.search);
+  const { query, sort, filters, category } = useAppSelector(
+    state => state.search
+  );
 
   const [conditionFilter, shippingFilter, priceFilter] = filters;
 
@@ -16,7 +18,7 @@ export default function MainContent() {
       .map(filter => filter.id)
       .join(",")}&price=${priceFilter.values
       .map(filter => filter.id)
-      .join(",")}`
+      .join(",")}&category=${category}`
   );
 
   console.log(formattedQuery);
