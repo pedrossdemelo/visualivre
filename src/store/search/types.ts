@@ -75,4 +75,5 @@ export interface SearchState {
   sort: Sort;
   offset: number;
   limit: number;
+  category: string;
 }

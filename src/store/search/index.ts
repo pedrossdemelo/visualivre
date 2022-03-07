@@ -35,6 +35,7 @@ const initialState: SearchState = {
     id: "relevance",
     name: "Mais relevantes",
   },
+  category: "",
   offset: 0,
   limit: 50,
 };
@@ -64,6 +65,9 @@ export const searchSlice = createSlice({
     setOffset: (state, { payload }: PayloadAction<number>) => {
       state.offset = payload;
     },
+    setCategory: (state, { payload }: PayloadAction<string>) => {
+      state.category = payload;
+    },
   },
 });
 
@@ -76,6 +80,7 @@ export const {
   setOffset,
   setQuery,
   setSort,
+  setCategory,
 } = searchSlice.actions;
 export const searchReducer = searchSlice.reducer;
 export default search;
