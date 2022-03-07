@@ -1,8 +1,19 @@
-import type { InferGetServerSidePropsType } from "next";
+import { MainContent, Sidebar } from "@organisms";
+import type { InferGetStaticPropsType } from "next";
 import styled from "styled-components";
-import { Sidebar } from "./../components/Sidebar";
 
-export async function getServerSideProps() {
+export default function Home({
+  categories,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  return (
+    <Styled.Root>
+      <Sidebar categories={categories} />
+      <MainContent />
+    </Styled.Root>
+  );
+}
+
+export async function getStaticProps() {
   const res = await fetch("https://api.mercadolibre.com/sites/MLB/categories");
   const categories = await res.json();
 
@@ -13,24 +24,13 @@ export async function getServerSideProps() {
   };
 }
 
-const StyledRoot = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  min-height: 100vh;
-  background-color: var(--bg-1);
-`;
+const Styled = {
+  Root: styled.div`
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100vh;
+    background-color: var(--bg-1);
+  `,
 
-const StyledContent = styled.div``;
-
-function Home({
-  categories,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  return (
-    <StyledRoot>
-      <Sidebar categories={categories} />
-      <StyledContent></StyledContent>
-    </StyledRoot>
-  );
-}
-
-export default Home;
+  Content: styled.div``,
+};
