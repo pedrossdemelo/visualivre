@@ -19,7 +19,7 @@ export default function Sidebar({ categories }: SidebarProps) {
   return (
     <StyledSidebar>
       <StyledHeading>🧐 VisuaLivre</StyledHeading>
-      <StyledCategories role="radiogroup">
+      <form role="radiogroup">
         {categories.slice(0, -1).map(category => (
           <StyledCategoryLabel
             aria-checked={category.id === selectedCategory}
@@ -37,7 +37,7 @@ export default function Sidebar({ categories }: SidebarProps) {
             {category.name}
           </StyledCategoryLabel>
         ))}
-      </StyledCategories>
+      </form>
     </StyledSidebar>
   );
 }
@@ -87,8 +87,6 @@ const StyledCategoryLabel = styled.label`
     color: var(--fg-1);
   }
 `;
-
-const StyledCategories = styled.form``;
 
 const StyledCategoryRadio = styled.input`
   appearance: none;
