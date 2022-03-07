@@ -32,10 +32,10 @@ export default css`
     --fs-xxl: 1.5rem;
     --fs-heading: 2rem;
 
-    --rounded: 4px;
-    --rounded-md: 6px;
-    --rounded-lg: 8px;
-    --rounded-xl: 12px;
+    --rounded: 0.25rem;
+    --rounded-md: 0.375rem;
+    --rounded-lg: 0.5rem;
+    --rounded-xl: 0.75rem;
 
     --transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 
@@ -62,7 +62,6 @@ export default css`
     --orange-1: #fb923c;
     --orange-2: #f97316;
     --orange-3: #9a3412;
-    --accent: var(--yellow-1);
     --selection: #facc158f;
 
     --scrollbar-thumb: inset 99px 0px 99px rgba(255, 255, 255, 0.2);

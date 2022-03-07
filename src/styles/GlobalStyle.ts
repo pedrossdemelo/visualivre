@@ -12,7 +12,7 @@ export default createGlobalStyle`
     font-family: var(--inter);
     font-size: 1rem;
     scrollbar-width: thin !important;
-    scrollbar-color: var(--scrollbar-thumb) rgba(0, 0, 0, 0) !important;
+    scrollbar-color: var(--scrollbar-thumb-hover) rgba(0, 0, 0, 0) !important;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
