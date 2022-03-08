@@ -21,13 +21,17 @@ export default function SortSelector() {
   return (
     <StyledSelectWrapper>
       <StyledLabel htmlFor="sort">Ordenar por:</StyledLabel>
-      <StyledSelect name="sort" value={currentSort.id} onChange={updateSelect}>
+      <StyledSortSelect
+        name="sort"
+        value={currentSort.id}
+        onChange={updateSelect}
+      >
         {Object.entries(sorts).map(([id, name]) => (
           <option key={id} value={id}>
             {name}
           </option>
         ))}
-      </StyledSelect>
+      </StyledSortSelect>
       <Sort size={20} style={{ marginLeft: "1rem" }} />
     </StyledSelectWrapper>
   );
@@ -52,6 +56,10 @@ export const StyledSelect = styled.select`
   option {
     background-color: var(--bg-1);
   }
+`;
+
+const StyledSortSelect = styled(StyledSelect)`
+  max-width: 12.5ch;
 `;
 
 export const StyledSelectWrapper = styled.div`

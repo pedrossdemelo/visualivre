@@ -27,6 +27,8 @@ interface ResultsProps {
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-auto-rows: min-content;
+  gap: 0px;
   overflow-y: scroll;
   height: 100%;
   padding: 12.25rem 1.5rem 2rem 2rem;

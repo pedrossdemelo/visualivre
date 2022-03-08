@@ -47,17 +47,17 @@ export default createGlobalStyle`
 
   @media (pointer: fine) {
     *::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-      background-color: none;
+      width: 10px !important;
+      height: 10px !important;
+      background-color: none !important;
     }
 
     *::-webkit-scrollbar-thumb {
-      box-sizing: content-box;
-      background-color: none;
-      border: 2px solid transparent;
-      border-radius: 24px;
-      box-shadow: var(--scrollbar-thumb);
+      box-sizing: content-box !important;
+      background-color: none !important;
+      border: 2px solid transparent !important;
+      border-radius: 24px !important;
+      box-shadow: var(--scrollbar-thumb) !important;
     }
 
     *::-webkit-scrollbar-thumb:hover {
