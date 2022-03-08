@@ -70,6 +70,14 @@ const StyledInput = styled.input`
   display: inline-block;
   border: 2px solid var(--bg-3);
   border-radius: var(--rounded-md);
+  color: var(--yellow-2);
+  font-size: var(--fs-sm);
+  text-align: center;
+  height: 1.75rem;
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
 `;
 
 const StyledSeparator = styled.span`
@@ -85,7 +93,7 @@ const StyledSubmit = styled.button`
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   cursor: pointer;
 `;
 

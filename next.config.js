@@ -4,6 +4,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    domains: ["http2.mlstatic.com"],
+  },
 };
 
 module.exports = nextConfig;

@@ -22,6 +22,7 @@ export default createGlobalStyle`
 
     &::selection {
       background-color: var(--selection);
+      color: var(--fg-1);
     }
 
     &:focus {
@@ -62,5 +63,9 @@ export default createGlobalStyle`
     *::-webkit-scrollbar-thumb:hover {
       box-shadow: var(--scrollbar-thumb-hover);
     }
+  }
+
+  .blur-img-cover {
+    filter: blur(1rem) saturate(1.5) brightness(2) contrast(1.5);
   }
 `;

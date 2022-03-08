@@ -1,4 +1,5 @@
 import { useAppSelector } from "@store";
+import { HambergerMenu } from "iconsax-react";
 import React from "react";
 import styled from "styled-components";
 
@@ -7,6 +8,7 @@ export default function CurrentQuery() {
 
   return (
     <StyledContainer>
+      <HambergerMenu style={{ marginRight: "1rem" }} />
       {currentQuery && (
         <StyledCurrentQuery>&ldquo;{currentQuery}&rdquo;</StyledCurrentQuery>
       )}

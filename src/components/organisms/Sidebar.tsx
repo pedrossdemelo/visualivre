@@ -25,7 +25,6 @@ export default function Sidebar({ categories }: SidebarProps) {
             aria-checked={category.id === selectedCategory}
             key={category.id}
           >
-            {" "}
             <StyledCategoryRadio
               checked={category.id === selectedCategory}
               onChange={selectCategory}
@@ -56,7 +55,7 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-flow: column nowrap;
   background-color: var(--bg-2);
-  width: min(80vw, 18.5rem);
+  min-width: min(80vw, 18.5rem);
   min-height: 100vh;
   max-height: 100vh;
   overflow-y: hidden;

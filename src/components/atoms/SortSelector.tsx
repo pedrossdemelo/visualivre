@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@store";
 import { setSort } from "@store/search";
 import { SortId, sorts } from "@store/search/types";
+import { Sort } from "iconsax-react";
 import React, { ChangeEvent } from "react";
 import styled from "styled-components";
 
@@ -27,6 +28,7 @@ export default function SortSelector() {
           </option>
         ))}
       </StyledSelect>
+      <Sort size={20} style={{ marginLeft: "1rem" }} />
     </StyledSelectWrapper>
   );
 }
@@ -43,13 +45,12 @@ export const StyledSelect = styled.select`
   font-size: var(--fs-sm);
   cursor: pointer;
   background-color: transparent;
-  color: var(--fg-2);
-  width: 15ch;
+  color: var(--yellow-2);
   &:focus {
     outline: none;
   }
   option {
-    background-color: black;
+    background-color: var(--bg-1);
   }
 `;
 

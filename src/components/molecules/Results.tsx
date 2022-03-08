@@ -29,7 +29,7 @@ const StyledContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   overflow-y: scroll;
   height: 100%;
-  padding-top: 8rem;
+  padding: 12.25rem 1.5rem 2rem 2rem;
 `;
 
 export default memo(Results);
