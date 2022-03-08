@@ -107,6 +107,7 @@ const StyledImageWrapper = styled.div`
   flex-shrink: 0;
   border-radius: var(--rounded-xl);
   transition: all 0.15s ease-in-out;
+  background-color: var(--bg-3);
   ${StyledWrapper}:hover & {
     margin: -2px;
     border: 2px solid var(--accent);
