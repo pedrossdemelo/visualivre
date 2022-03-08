@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "@store";
 import { setShipping } from "@store/search";
 import { shippingFilters, ShippingFilterValue } from "@store/search/types";
 import React, { ChangeEvent } from "react";
+import { StyledLabel, StyledSelect, StyledSelectWrapper } from "./SortSelector";
 
 export default function ShippingSelector() {
   const dispatch = useAppDispatch();
@@ -24,8 +25,9 @@ export default function ShippingSelector() {
   };
 
   return (
-    <div>
-      <select
+    <StyledSelectWrapper>
+      <StyledLabel>Frete:</StyledLabel>
+      <StyledSelect
         onChange={updateShippingFilter}
         value={
           currentShippingFilters.length < 1
@@ -39,7 +41,7 @@ export default function ShippingSelector() {
             {name}
           </option>
         ))}
-      </select>
-    </div>
+      </StyledSelect>
+    </StyledSelectWrapper>
   );
 }

@@ -12,10 +12,13 @@ export default createGlobalStyle`
     font-family: var(--inter);
     font-size: 1rem;
     scrollbar-width: thin !important;
-    scrollbar-color: var(--scrollbar-thumb-hover) rgba(0, 0, 0, 0) !important;
+    scrollbar-color: var(--scrollbar-thumb-moz) rgba(0, 0, 0, 0) !important;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: none;
+    appearance: none;
+    color: var(--fg-1);
 
     &::selection {
       background-color: var(--selection);
@@ -38,7 +41,6 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: var(--bg-1);
-    color: var(--fg-1);
     overflow-x: hidden;
   };
 
@@ -46,7 +48,7 @@ export default createGlobalStyle`
     *::-webkit-scrollbar {
       width: 10px;
       height: 10px;
-      background-color: var(--bg-1);
+      background-color: none;
     }
 
     *::-webkit-scrollbar-thumb {

@@ -19,12 +19,13 @@ export default function Sidebar({ categories }: SidebarProps) {
   return (
     <StyledSidebar>
       <StyledHeading>🧐 VisuaLivre</StyledHeading>
-      <form role="radiogroup">
+      <StyledCategoryList role="radiogroup">
         {categories.slice(0, -1).map(category => (
           <StyledCategoryLabel
             aria-checked={category.id === selectedCategory}
             key={category.id}
           >
+            {" "}
             <StyledCategoryRadio
               checked={category.id === selectedCategory}
               onChange={selectCategory}
@@ -37,7 +38,7 @@ export default function Sidebar({ categories }: SidebarProps) {
             {category.name}
           </StyledCategoryLabel>
         ))}
-      </form>
+      </StyledCategoryList>
     </StyledSidebar>
   );
 }
@@ -55,13 +56,20 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-flow: column nowrap;
   background-color: var(--bg-2);
-  width: min(75vw, 20rem);
-  overflow-x: hidden;
+  width: min(80vw, 18.5rem);
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
 `;
 
 const StyledHeading = styled.h1`
-  padding: 1.25rem 2rem;
+  padding: 1.3rem 2rem;
+  height: 5rem;
   font-size: var(--fs-xxl);
+`;
+
+const StyledCategoryList = styled.form`
+  overflow-y: scroll;
 `;
 
 const StyledCategoryLabel = styled.label`

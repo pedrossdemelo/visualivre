@@ -1,14 +1,22 @@
 import { Filters, Results } from "@molecules";
 import { useCurrentResults } from "hooks";
 import React from "react";
+import styled from "styled-components";
 
 export default function MainContent() {
   const results = useCurrentResults();
 
   return (
-    <main>
+    <StyledMain>
       <Filters />
       <Results {...results} />
-    </main>
+    </StyledMain>
   );
 }
+
+const StyledMain = styled.main`
+  flex-grow: 1;
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+`;

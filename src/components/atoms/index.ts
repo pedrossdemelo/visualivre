@@ -1,4 +1,5 @@
 export { default as ConditionSelector } from "./ConditionSelector";
+export { default as CurrentQuery } from "./CurrentQuery";
 export { default as PriceSelector } from "./PriceSelector";
 export { default as Product } from "./Product";
 export { default as Search } from "./Search";

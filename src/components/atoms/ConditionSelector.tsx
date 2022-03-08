@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "@store";
 import { setConditions } from "@store/search";
 import { conditionFilters, ConditionFilterValue } from "@store/search/types";
 import React, { ChangeEvent } from "react";
+import { StyledLabel, StyledSelect, StyledSelectWrapper } from "./SortSelector";
 
 export default function ConditionSelector() {
   const dispatch = useAppDispatch();
@@ -25,8 +26,9 @@ export default function ConditionSelector() {
   };
 
   return (
-    <div>
-      <select
+    <StyledSelectWrapper>
+      <StyledLabel>Condição:</StyledLabel>
+      <StyledSelect
         onChange={updateConditionFilter}
         value={
           currentConditionFilters.length > 1
@@ -40,7 +42,7 @@ export default function ConditionSelector() {
             {name}
           </option>
         ))}
-      </select>
-    </div>
+      </StyledSelect>
+    </StyledSelectWrapper>
   );
 }

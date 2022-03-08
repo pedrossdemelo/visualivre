@@ -19,6 +19,7 @@ export default css`
     --orange-3: #9a3412;
     --accent: var(--yellow-1);
     --selection: #facc158f;
+    --bg-t-1: #171717c5;
 
     --worksans: "Work Sans", sans-serif;
     --inter: "Inter", sans-serif;
@@ -31,6 +32,8 @@ export default css`
     --fs-xl: 1.25rem;
     --fs-xxl: 1.75rem;
     --fs-heading: 2rem;
+
+    --filters-h: 8rem;
 
     --rounded: 0.25rem;
     --rounded-md: 0.375rem;
@@ -55,6 +58,7 @@ export default css`
     --fg-3: #616060;
     --fg-2: #acacac;
     --fg-1: #f5f5f5;
+    --bg-t-1: #171717c5;
     --yellow-1: #facc15;
     --yellow-2: #eab308;
     --yellow-3: #854d0e;
@@ -68,5 +72,6 @@ export default css`
 
     --scrollbar-thumb: inset 99px 0px 99px rgba(255, 255, 255, 0.2);
     --scrollbar-thumb-hover: inset 99px 0px 99px rgba(255, 255, 255, 0.3);
+    --scrollbar-thumb-moz: rgba(255, 255, 255, 0.25);
   }
 `;
