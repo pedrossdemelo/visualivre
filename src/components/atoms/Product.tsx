@@ -25,11 +25,11 @@ function Product(product: ResultsEntity) {
       <StyledPaymentInfo>
         <StyledPrice>
           R$ {product.price}
-          {product.shipping.free_shipping && (
+          {product.shipping?.free_shipping && (
             <FreeShippingDot title="Frete Grátis" aria-label="Frete Grátis" />
           )}
         </StyledPrice>
-        {product.installments.quantity > 1 && (
+        {product.installments?.quantity > 1 && (
           <StyledInstallments noInterest={product.installments.rate === 0}>
             {product.installments.quantity} x {product.installments.amount}
           </StyledInstallments>
