@@ -53,6 +53,9 @@ const StyledSubmit = styled.button`
   align-items: center;
   margin-right: 1rem;
   cursor: pointer;
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 export default memo(Search);

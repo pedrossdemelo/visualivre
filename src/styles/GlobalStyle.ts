@@ -5,6 +5,7 @@ export default createGlobalStyle`
   ${variables};
 
   * {
+    font-display: optional;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;

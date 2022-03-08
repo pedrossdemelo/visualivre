@@ -42,6 +42,11 @@ const SearchAndFilterContainer = styled.div`
   @supports not (backdrop-filter: blur(12px)) {
     background-color: var(--bg-1);
   }
+
+  @media (max-width: 480px) {
+    position: fixed;
+    top: 0;
+  }
 `;
 
 const FiltersContainer = styled.div`
@@ -51,6 +56,9 @@ const FiltersContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 2.75rem;
+  @media (max-width: 480px) {
+    padding: 0 1rem 0.25rem;
+  }
 `;
 
 const FilterGroup = styled.div`
@@ -60,6 +68,11 @@ const FilterGroup = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-right: 1rem;
+  @media (max-width: 480px) {
+    & > :first-child {
+      display: none;
+    }
+  }
 `;
 
 const SearchAndSortContainer = styled.div`
@@ -70,6 +83,11 @@ const SearchAndSortContainer = styled.div`
   padding: 0 2rem;
   width: 100%;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    height: 3rem;
+    padding: 0.5rem 1rem 0;
+  }
 `;
 
 export default memo(Filters);

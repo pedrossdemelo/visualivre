@@ -55,10 +55,13 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-flow: column nowrap;
   background-color: var(--bg-2);
-  min-width: min(80vw, 18.5rem);
-  min-height: 100vh;
+  width: min(80vw, 18.5rem);
   max-height: 100vh;
   overflow-y: hidden;
+  @media (max-width: 480px) {
+    display: none;
+    width: 0;
+  }
 `;
 
 const StyledHeading = styled.h1`

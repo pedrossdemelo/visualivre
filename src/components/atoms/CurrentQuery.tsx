@@ -23,6 +23,9 @@ const StyledContainer = styled.div`
   flex-flow: row nowrap;
   align-items: center;
   padding: 0 2rem;
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const StyledCurrentQuery = styled.h1`

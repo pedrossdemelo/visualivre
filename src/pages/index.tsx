@@ -29,4 +29,5 @@ const StyledRoot = styled.div`
   flex-flow: row nowrap;
   height: 100vh;
   background-color: var(--bg-1);
+  overflow: hidden;
 `;
