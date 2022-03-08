@@ -37,7 +37,7 @@ const SearchAndFilterContainer = styled.div`
   backdrop-filter: blur(12px) saturate(200%);
   width: 100%;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 100;
 
   @supports not (backdrop-filter: blur(12px)) {
     background-color: var(--bg-1);

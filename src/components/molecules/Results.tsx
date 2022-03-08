@@ -11,8 +11,8 @@ function Results({ data, isError, isFetching }: ResultsProps) {
 
   return (
     <StyledContainer>
-      {data?.results.map(item => (
-        <Product key={item.id} {...item} />
+      {data?.results.map(product => (
+        <Product key={product.id} {...product} />
       ))}
     </StyledContainer>
   );

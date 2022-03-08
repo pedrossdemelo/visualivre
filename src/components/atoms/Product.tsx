@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 function Product(product: ResultsEntity) {
   return (
-    <StyledWrapper>
+    <StyledWrapper onClick={() => window.open(product.permalink, "_blank")}>
       <StyledImageWrapper>
         <Image
           aria-hidden="true"
@@ -25,7 +25,9 @@ function Product(product: ResultsEntity) {
       <StyledPaymentInfo>
         <StyledPrice>
           R$ {product.price}
-          {product.shipping.free_shipping && <FreeShippingDot />}
+          {product.shipping.free_shipping && (
+            <FreeShippingDot title="Frete Grátis" aria-label="Frete Grátis" />
+          )}
         </StyledPrice>
         {product.installments.quantity > 1 && (
           <StyledInstallments noInterest={product.installments.rate === 0}>
@@ -50,13 +52,13 @@ const StyledTitle = styled.h6`
 `;
 
 const FreeShippingDot = styled.div`
-  height: 0.25rem;
+  height: 0.375rem;
   aspect-ratio: 1;
   border-radius: 50%;
   position: absolute;
   background-color: var(--green-2);
   right: -0.875rem;
-  bottom: 0.425rem;
+  bottom: 0.325rem;
   z-index: 9;
 `;
 
@@ -90,10 +92,11 @@ const StyledWrapper = styled.div`
   gap: 0.875rem;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   &:hover {
     box-shadow: var(--shadow-1);
     background-color: var(--bg-2);
+    transform: scale(1.0125);
   }
 `;
 
@@ -103,6 +106,11 @@ const StyledImageWrapper = styled.div`
   position: relative;
   flex-shrink: 0;
   border-radius: var(--rounded-xl);
+  transition: all 0.15s ease-in-out;
+  ${StyledWrapper}:hover & {
+    margin: -2px;
+    border: 2px solid var(--accent);
+  }
 `;
 
 export default memo(Product);

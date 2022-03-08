@@ -29,11 +29,12 @@ export default function PriceSelector() {
   const updatePriceFilter: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
 
+    if (minPrice === "" && maxPrice === "") return dispatch(setPrice([]));
+
     const min = parseValue(minPrice);
     const max = parseValue(maxPrice);
 
-    if (![min, max].includes("*") && min > max)
-      return void setMinPrice("") || setMaxPrice("");
+    if (![min, max].includes("*") && min > max) return setMinPrice("");
 
     const newPriceFilter: PriceFilterValue = {
       id: `${min}-${max}` as PriceFilterValue["id"],
