@@ -13,8 +13,7 @@ export default function ConditionSelector() {
   );
 
   const updateConditionFilter = (e: ChangeEvent<HTMLSelectElement>) => {
-    if (e.target.value === "any")
-      return dispatch(setConditions([...conditionFilters]));
+    if (e.target.value === "any") return dispatch(setConditions([]));
 
     const newConditionFilterValueId = e.target
       .value as ConditionFilterValue["id"];
@@ -34,7 +33,7 @@ export default function ConditionSelector() {
         value={
           currentConditionFilters.length > 1
             ? "Qualquer"
-            : currentConditionFilters[0].id
+            : currentConditionFilters[0]?.id
         }
       >
         <option value="any">Qualquer</option>

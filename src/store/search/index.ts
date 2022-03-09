@@ -14,11 +14,7 @@ const initialState: SearchState = {
     {
       id: "ITEM_CONDITION",
       name: "Condição",
-      values: [
-        { id: "2230284", name: "Novo" },
-        { id: "2230581", name: "Usado" },
-        { id: "2230582", name: "Recondicionado" },
-      ],
+      values: [],
     },
     {
       id: "shipping_cost",
