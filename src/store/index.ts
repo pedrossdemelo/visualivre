@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { productsApi } from "@services/products";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { menuOpenReducer } from "./menuOpen";
 import { searchReducer } from "./search";
 
 export const store = configureStore({
   reducer: {
     search: searchReducer,
     [productsApi.reducerPath]: productsApi.reducer,
+    menuOpen: menuOpenReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(productsApi.middleware),

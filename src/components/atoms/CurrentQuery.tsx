@@ -1,14 +1,19 @@
-import { useAppSelector } from "@store";
+import { useAppDispatch, useAppSelector } from "@store";
+import { toggleMenu } from "@store/menuOpen";
 import { HambergerMenu } from "iconsax-react";
 import React from "react";
 import styled from "styled-components";
 
 export default function CurrentQuery() {
   const currentQuery = useAppSelector(state => state.search.query);
+  const dispatch = useAppDispatch();
+  const toggle = () => dispatch(toggleMenu());
 
   return (
     <StyledContainer>
-      <HambergerMenu style={{ marginRight: "1rem" }} />
+      <button onClick={toggle}>
+        <HambergerMenu style={{ marginRight: "1rem" }} />
+      </button>
       {currentQuery && (
         <StyledCurrentQuery>&ldquo;{currentQuery}&rdquo;</StyledCurrentQuery>
       )}

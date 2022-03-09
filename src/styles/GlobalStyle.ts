@@ -20,6 +20,7 @@ export default createGlobalStyle`
     border: none;
     appearance: none;
     color: var(--fg-1);
+    background-color: transparent;
 
     &::selection {
       background-color: var(--selection);

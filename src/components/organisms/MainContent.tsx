@@ -18,5 +18,6 @@ const StyledMain = styled.main`
   flex-grow: 1;
   min-height: 100vh;
   max-height: 100vh;
+  min-width: 375px;
   position: relative;
 `;

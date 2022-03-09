@@ -1,11 +1,21 @@
 import { useAppDispatch, useAppSelector } from "@store";
+import { toggleMenu } from "@store/menuOpen";
 import { setCategory } from "@store/search";
-import React, { ChangeEvent } from "react";
+import { useMediaQuery } from "hooks";
+import React, { ChangeEvent, useEffect } from "react";
 import styled from "styled-components";
 
 export default function Sidebar({ categories }: SidebarProps) {
   const dispatch = useAppDispatch();
   const selectedCategory = useAppSelector(state => state.search.category);
+  const autoClose = useMediaQuery("(max-width: 1024px)");
+  const menuOpen = useAppSelector(state => state.menuOpen);
+  const close = () => menuOpen && dispatch(toggleMenu());
+
+  useEffect(() => {
+    autoClose && close();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoClose]);
 
   function selectCategory(e: ChangeEvent<HTMLInputElement>) {
     console.log(e.target.value, selectedCategory);
@@ -17,7 +27,7 @@ export default function Sidebar({ categories }: SidebarProps) {
   }
 
   return (
-    <StyledSidebar>
+    <StyledSidebar open={menuOpen}>
       <StyledHeading>🧐 VisuaLivre</StyledHeading>
       <StyledCategoryList role="radiogroup">
         {categories.slice(0, -1).map(category => (
@@ -51,23 +61,23 @@ interface SidebarProps {
   categories: Category[];
 }
 
-const StyledSidebar = styled.aside`
+const StyledSidebar = styled.aside<{ open: boolean }>`
   display: flex;
   flex-flow: column nowrap;
   background-color: var(--bg-2);
-  width: min(80vw, 18.5rem);
+  width: ${p => (p.open ? "min(80vw, 18.5rem)" : "0")};
   max-height: 100vh;
   overflow-y: hidden;
-  @media (max-width: 480px) {
-    display: none;
-    width: 0;
-  }
+  will-change: width;
+  transition: var(--transition);
+  transition-property: width;
 `;
 
 const StyledHeading = styled.h1`
   padding: 1.3rem 2rem;
   height: 5rem;
   font-size: var(--fs-xxl);
+  white-space: nowrap;
 `;
 
 const StyledCategoryList = styled.form`
