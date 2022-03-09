@@ -84,7 +84,7 @@ const StyledInput = styled.input`
   }
 
   @media (max-width: 480px) {
-    max-width: clamp(2.5rem, 7vw, 3.5rem);
+    max-width: clamp(2.5rem, 12vw, 4rem);
   }
 `;
 
