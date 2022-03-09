@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "@store";
 import { setShipping } from "@store/search";
 import { shippingFilters, ShippingFilterValue } from "@store/search/types";
 import React, { ChangeEvent } from "react";
+import styled from "styled-components";
 import { StyledLabel, StyledSelect, StyledSelectWrapper } from "./SortSelector";
 
 export default function ShippingSelector() {
@@ -13,7 +14,6 @@ export default function ShippingSelector() {
 
   const updateShippingFilter = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === "any") return dispatch(setShipping([]));
-
     const newShippingFilterValueId = e.target
       .value as ShippingFilterValue["id"];
 
@@ -25,7 +25,7 @@ export default function ShippingSelector() {
   };
 
   return (
-    <StyledSelectWrapper>
+    <StyledShippingSelect>
       <StyledLabel>Frete:</StyledLabel>
       <StyledSelect
         onChange={updateShippingFilter}
@@ -42,6 +42,10 @@ export default function ShippingSelector() {
           </option>
         ))}
       </StyledSelect>
-    </StyledSelectWrapper>
+    </StyledShippingSelect>
   );
 }
+
+const StyledShippingSelect = styled(StyledSelectWrapper)`
+  margin-right: -0.95rem;
+`;

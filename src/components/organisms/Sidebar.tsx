@@ -63,6 +63,7 @@ interface SidebarProps {
 
 const StyledSidebar = styled.aside<{ open: boolean }>`
   display: flex;
+  flex-shrink: 0;
   flex-flow: column nowrap;
   background-color: var(--bg-2);
   width: ${p => (p.open ? "min(80vw, 18.5rem)" : "0")};
@@ -74,7 +75,7 @@ const StyledSidebar = styled.aside<{ open: boolean }>`
 `;
 
 const StyledHeading = styled.h1`
-  padding: 1.3rem 2rem;
+  padding: 1.725rem 2rem 1rem;
   height: 5rem;
   font-size: var(--fs-xxl);
   white-space: nowrap;

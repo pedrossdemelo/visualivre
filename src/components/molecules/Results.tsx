@@ -32,9 +32,15 @@ const StyledContainer = styled.div`
   overflow-y: scroll;
   height: 100%;
   padding: 12.25rem 1.5rem 2rem 2rem;
-  @media (max-width: 480px) {
+  @media (max-width: 775px) {
     padding: 12.25rem 0.5rem 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+  @media (max-width: 480px) {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  @media (max-width: 402px) {
+    grid-template-columns: 1fr 1fr;
   }
 `;
 

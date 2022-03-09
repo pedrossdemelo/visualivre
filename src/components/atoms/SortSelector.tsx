@@ -1,11 +1,13 @@
 import { useAppDispatch, useAppSelector } from "@store";
 import { setSort } from "@store/search";
 import { SortId, sorts } from "@store/search/types";
+import { useMediaQuery } from "hooks";
 import { Sort } from "iconsax-react";
 import React, { ChangeEvent } from "react";
 import styled from "styled-components";
 
 export default function SortSelector() {
+  const isSmallScreen = useMediaQuery("(max-width: 700px)");
   const dispatch = useAppDispatch();
   const currentSort = useAppSelector(state => state.search.sort);
 
@@ -20,7 +22,7 @@ export default function SortSelector() {
 
   return (
     <StyledSelectWrapper>
-      <StyledLabel htmlFor="sort">Ordenar por:</StyledLabel>
+      <StyledLabel htmlFor="sort">Ordem:</StyledLabel>
       <StyledSortSelect
         name="sort"
         value={currentSort.id}
@@ -32,7 +34,7 @@ export default function SortSelector() {
           </option>
         ))}
       </StyledSortSelect>
-      <Sort size={20} style={{ marginLeft: "1rem" }} />
+      {!isSmallScreen && <Sort size={20} style={{ marginLeft: "1rem" }} />}
     </StyledSelectWrapper>
   );
 }

@@ -80,7 +80,7 @@ const StyledPaymentInfo = styled.div`
   gap: 0.875rem;
   align-items: center;
   position: relative;
-  @media (max-width: 480px) {
+  @media (max-width: 775px) {
     top: 0.1rem;
   }
 `;
@@ -100,6 +100,11 @@ const StyledWrapper = styled.div`
   &:hover {
     box-shadow: var(--shadow-1);
     background-color: var(--bg-2);
+  }
+  @media (max-width: 775px) {
+    padding: 0.6rem;
+    gap: 0.6rem;
+    aspect-ratio: 8.3/10;
   }
   @media (max-width: 480px) {
     padding: 0.5rem;

@@ -1,12 +1,15 @@
 import { useAppDispatch, useAppSelector } from "@store";
 import { setPrice } from "@store/search";
 import { PriceFilterValue } from "@store/search/types";
+import { useMediaQuery } from "hooks";
 import { MoneySend } from "iconsax-react";
 import React, { FormEventHandler, useState } from "react";
 import styled from "styled-components";
 import { StyledLabel } from "./SortSelector";
 
 export default function PriceSelector() {
+  const isMobile = useMediaQuery("(max-width: 480px)");
+
   const dispatch = useAppDispatch();
 
   const currentPriceFilter = useAppSelector(
@@ -52,7 +55,7 @@ export default function PriceSelector() {
         type="text"
         value={minPrice}
       />
-      <StyledSeparator>até</StyledSeparator>
+      <StyledSeparator>{isMobile ? "-" : "até"}</StyledSeparator>
       <StyledInput
         onChange={e => handlePriceChange("max", e.target.value)}
         type="text"
@@ -79,6 +82,10 @@ const StyledInput = styled.input`
     outline: none;
     border-color: var(--accent);
   }
+
+  @media (max-width: 480px) {
+    max-width: clamp(2.5rem, 7vw, 3.5rem);
+  }
 `;
 
 const StyledSeparator = styled.span`
@@ -96,6 +103,10 @@ const StyledSubmit = styled.button`
   height: 100%;
   margin-left: 1rem;
   cursor: pointer;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const StyledPriceForm = styled.form`
