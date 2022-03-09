@@ -46,6 +46,9 @@ const StyledContainer = styled.div`
 const StyledCurrentQuery = styled.h1`
   font-size: var(--fs-xxl);
   font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   @media (max-width: 775px) {
     font-size: var(--fs-xl);
   }
