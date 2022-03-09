@@ -5,7 +5,18 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["http2.mlstatic.com", "mlb-s1-p.mlstatic.com"],
+    domains: [
+      "http2.mlstatic.com",
+      "mlb-s1-p.mlstatic.com",
+      "mlb-s2-p.mlstatic.com",
+      "mlb-s3-p.mlstatic.com",
+      "mlb-s4-p.mlstatic.com",
+      "mlb-s5-p.mlstatic.com",
+      "mlb-s6-p.mlstatic.com",
+      "mlb-s7-p.mlstatic.com",
+      "mlb-s8-p.mlstatic.com",
+      "mlb-s9-p.mlstatic.com",
+    ],
   },
 };
 
