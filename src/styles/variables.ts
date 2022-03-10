@@ -33,6 +33,10 @@ export default css`
     --fs-xxl: 1.75rem;
     --fs-heading: 2rem;
 
+    --scrollbar-thumb: inset 99px 0px 99px rgba(0, 0, 0, 0.2);
+    --scrollbar-thumb-hover: inset 99px 0px 99px rgba(0, 0, 0, 0.3);
+    --scrollbar-thumb-moz: rgba(0, 0, 0, 0.25);
+
     --filters-h: 8rem;
 
     --rounded: 0.25rem;
