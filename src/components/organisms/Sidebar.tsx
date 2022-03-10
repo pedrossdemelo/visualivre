@@ -4,6 +4,7 @@ import { setCategory } from "@store/search";
 import { useMediaQuery } from "hooks";
 import React, { ChangeEvent, useEffect } from "react";
 import styled from "styled-components";
+import { ThemeToggle } from "./../atoms/ThemeToggle";
 
 export default function Sidebar({ categories }: SidebarProps) {
   const dispatch = useAppDispatch();
@@ -31,7 +32,10 @@ export default function Sidebar({ categories }: SidebarProps) {
 
   return (
     <StyledSidebar open={menuOpen}>
-      <StyledHeading>🧐 VisuaLivre</StyledHeading>
+      <StyledHeading>
+        🧐 VisuaLivre
+        <ThemeToggle />
+      </StyledHeading>
       <StyledCategoryList role="radiogroup">
         {categories.slice(0, -1).map(category => (
           <StyledCategoryLabel
@@ -82,6 +86,10 @@ const StyledHeading = styled.h1`
   height: 5rem;
   font-size: var(--fs-xxl);
   white-space: nowrap;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledCategoryList = styled.form`
