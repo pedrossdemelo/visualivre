@@ -1,27 +1,26 @@
 import { Product } from "@atoms";
-import { ProductQuery, ResultsEntity } from "@services/products/ProductQuery";
+import { ResultsEntity } from "@services/products/ProductQuery";
 import { useCurrentResults } from "hooks";
-import React, { memo, useEffect, useRef } from "react";
+import { useScrollToBottom } from "hooks/useScrollToBottom";
+import React, { memo, useEffect } from "react";
 import styled from "styled-components";
 
 function Results() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [extraResults, setResults] = React.useState<ResultsEntity[]>([]);
   const [offset, setOffset] = React.useState(0);
 
   const { formattedQuery, data, isError, isFetching } = useCurrentResults();
 
-  function bottomReachHandler() {
-    if (!containerRef.current || !data) return;
+  const [reachBottomDetector, reachedBottom] = useScrollToBottom();
 
-    const reachedBottom =
-      containerRef.current.scrollHeight - containerRef.current.scrollTop ===
-      containerRef.current.clientHeight;
+  useEffect(() => {
+    if (!data) return;
 
     const thereIsMoreData = data.paging.total > offset;
 
     if (reachedBottom && thereIsMoreData) setOffset(offset + 50);
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reachedBottom]);
 
   useEffect(() => {
     setOffset(0);
@@ -55,22 +54,22 @@ function Results() {
   const results = data.results;
 
   return (
-    <StyledContainer onScroll={bottomReachHandler} ref={containerRef}>
+    <StyledContainer>
       {results.map(product => (
         <Product key={product.id} {...product} />
       ))}
       {extraResults.map(product => (
         <Product key={product.id} {...product} />
       ))}
+      <ReachBottomDetector ref={reachBottomDetector} />
     </StyledContainer>
   );
 }
 
-interface ResultsProps {
-  data?: ProductQuery | null;
-  isError: boolean;
-  isFetching: boolean;
-}
+const ReachBottomDetector = styled.div`
+  height: 50px;
+  width: 100%;
+`;
 
 const StyledContainer = styled.div`
   display: grid;
