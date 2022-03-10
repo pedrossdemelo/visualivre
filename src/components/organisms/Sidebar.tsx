@@ -26,6 +26,9 @@ export default function Sidebar({ categories }: SidebarProps) {
     dispatch(setCategory(e.target.value));
   }
 
+  /* TODO: This sidebar implementation offers zero accessibility.
+  In the future, we should be able to tab through the categories */
+
   return (
     <StyledSidebar open={menuOpen}>
       <StyledHeading>🧐 VisuaLivre</StyledHeading>

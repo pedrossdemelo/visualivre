@@ -2,14 +2,14 @@ import { css } from "styled-components";
 
 export default css`
   :root {
-    --bg-1: #171717;
-    --bg-2: #202020;
-    --bg-3: #404040;
-    --fg-1: #f5f5f5;
-    --fg-2: #a3a3a3;
-    --fg-3: #525252;
+    --bg-1: #fafaf9;
+    --bg-2: #f5f5f4;
+    --bg-3: #e7e5e4;
+    --fg-3: #a8a29e;
+    --fg-2: #7a756e;
+    --fg-1: #292524;
     --yellow-1: #facc15;
-    --yellow-2: #eab308;
+    --yellow-2: #cf9f0d;
     --yellow-3: #854d0e;
     --green-1: #a3e635;
     --green-2: #7bc929;
@@ -19,7 +19,7 @@ export default css`
     --orange-3: #9a3412;
     --accent: var(--yellow-1);
     --selection: #facc158f;
-    --bg-t-1: #171717c5;
+    --bg-t-1: #fafaf9c5;
 
     --worksans: "Work Sans", sans-serif;
     --inter: "Inter", sans-serif;
