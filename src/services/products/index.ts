@@ -6,6 +6,7 @@ export const productsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.mercadolibre.com/sites/MLB/",
   }),
+  keepUnusedDataFor: 120,
   endpoints: builder => ({
     products: builder.query<ProductQuery, string>({
       query: query => `search?${query}`,
