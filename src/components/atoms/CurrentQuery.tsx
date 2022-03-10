@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@store";
 import { toggleMenu } from "@store/menuOpen";
+import { useCurrentResults } from "hooks";
 import { HambergerMenu } from "iconsax-react";
 import React from "react";
 import styled from "styled-components";
@@ -7,6 +8,7 @@ import styled from "styled-components";
 export default function CurrentQuery() {
   const currentQuery = useAppSelector(state => state.search.query);
   const dispatch = useAppDispatch();
+  const { data, isFetching } = useCurrentResults();
   const toggle = () => dispatch(toggleMenu());
 
   return (
@@ -15,7 +17,12 @@ export default function CurrentQuery() {
         <HambergerMenu style={{ marginRight: "1rem" }} />
       </HamburgerButton>
       {currentQuery && (
-        <StyledCurrentQuery>&ldquo;{currentQuery}&rdquo;</StyledCurrentQuery>
+        <StyledCurrentQuery>
+          &ldquo;{currentQuery}&rdquo;
+          {data?.paging.total && !isFetching ? (
+            <StyledResultCount> | {data.paging.total}</StyledResultCount>
+          ) : null}
+        </StyledCurrentQuery>
       )}
       {!currentQuery && (
         <StyledCurrentQuery>Pesquise no VisuaLivre</StyledCurrentQuery>
@@ -23,6 +30,14 @@ export default function CurrentQuery() {
     </StyledContainer>
   );
 }
+
+const StyledResultCount = styled.span`
+  color: var(--fg-3);
+  font-size: var(--fs-xxl);
+  @media (max-width: 775px) {
+    font-size: var(--fs-xl);
+  }
+`;
 
 const HamburgerButton = styled.button`
   background-color: transparent;
