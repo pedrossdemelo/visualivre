@@ -1,4 +1,5 @@
-import { MainContent, Sidebar } from "@organisms";
+import { Filters, Results } from "@molecules";
+import { Sidebar } from "@organisms";
 import type { InferGetStaticPropsType } from "next";
 import styled from "styled-components";
 
@@ -8,7 +9,10 @@ export default function Home({
   return (
     <StyledRoot>
       <Sidebar categories={categories} />
-      <MainContent />
+      <StyledMain>
+        <Filters />
+        <Results />
+      </StyledMain>
     </StyledRoot>
   );
 }
@@ -23,6 +27,14 @@ export async function getStaticProps() {
     },
   };
 }
+
+const StyledMain = styled.main`
+  flex-grow: 1;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 375px;
+  position: relative;
+`;
 
 const StyledRoot = styled.div`
   display: flex;
