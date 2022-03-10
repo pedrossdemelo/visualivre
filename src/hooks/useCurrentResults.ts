@@ -2,7 +2,7 @@ import { useProductsQuery } from "@services/products";
 import { useAppSelector } from "@store";
 import { Filter } from "@store/search/types";
 
-export default function useCurrentResults() {
+export default function useCurrentResults(offset?: number) {
   const { query, sort, filters, category } = useAppSelector(
     state => state.search
   );
@@ -21,11 +21,14 @@ export default function useCurrentResults() {
     }`
   );
 
-  const { data, isError, isFetching } = useProductsQuery(formattedQuery);
+  const { data, isError, isFetching, isSuccess } =
+    useProductsQuery(formattedQuery);
 
   return {
     data: query ? data : null,
     isError,
     isFetching,
+    formattedQuery,
+    isSuccess,
   };
 }
