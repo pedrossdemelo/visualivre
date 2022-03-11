@@ -12,6 +12,8 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
+  // TODO: Allow user to change to system default theme
+
   if (!mounted) return null;
 
   return (
