@@ -1,19 +1,25 @@
 import { Filters, Results } from "@molecules";
 import { Sidebar } from "@organisms";
 import type { InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import styled from "styled-components";
 
 export default function Home({
   categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <StyledRoot>
-      <Sidebar categories={categories} />
-      <StyledMain>
-        <Filters />
-        <Results />
-      </StyledMain>
-    </StyledRoot>
+    <>
+      <Head>
+        <title>VisuaLivre</title>
+      </Head>
+      <StyledRoot>
+        <Sidebar categories={categories} />
+        <StyledMain>
+          <Filters />
+          <Results />
+        </StyledMain>
+      </StyledRoot>
+    </>
   );
 }
 
