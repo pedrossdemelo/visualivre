@@ -4,6 +4,7 @@ import type { InferGetStaticPropsType } from "next";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 export default function Home({
@@ -12,7 +13,9 @@ export default function Home({
   const router = useRouter();
   // TODO: Implement less lazy way to update the theme based on the url
   const { setTheme } = useTheme();
-  if (router.query.theme) setTheme(router.query.theme);
+  useEffect(() => {
+    if (router.query.theme) setTheme(router.query.theme);
+  }, [router.query.theme, setTheme]);
 
   return (
     <>
