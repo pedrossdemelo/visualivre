@@ -1,12 +1,19 @@
 import { Filters, Results } from "@molecules";
 import { Sidebar } from "@organisms";
 import type { InferGetStaticPropsType } from "next";
+import { useTheme } from "next-themes";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
 export default function Home({
   categories,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter();
+  // TODO: Implement less lazy way to update the theme based on the url
+  const { setTheme } = useTheme();
+  if (router.query.theme) setTheme(router.query.theme);
+
   return (
     <>
       <Head>

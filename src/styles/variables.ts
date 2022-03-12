@@ -14,9 +14,6 @@ export default css`
     --green-1: #a3e635;
     --green-2: #7bc929;
     --green-3: #365314;
-    --orange-1: #fb923c;
-    --orange-2: #f97316;
-    --orange-3: #9a3412;
     --accent: var(--yellow-1);
     --selection: #facc158f;
     --bg-t-1: #fafaf9c5;
@@ -69,9 +66,6 @@ export default css`
     --green-1: #a3e635;
     --green-2: #7bc929;
     --green-3: #365314;
-    --orange-1: #fb923c;
-    --orange-2: #f97316;
-    --orange-3: #9a3412;
     --selection: #facc158f;
 
     --scrollbar-thumb: inset 99px 0px 99px rgba(255, 255, 255, 0.2);
