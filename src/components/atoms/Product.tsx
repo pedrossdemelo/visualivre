@@ -42,7 +42,7 @@ const ProductImg = styled.img`
 `;
 
 const BlurredImg = styled.img`
-  filter: blur(1rem) saturate(1.5) brightness(1.25) contrast(1.1);
+  filter: blur(1rem) saturate(1.5) brightness(1.125) contrast(1.1);
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -55,6 +55,7 @@ const StyledTitle = styled.h6`
   -webkit-box-orient: vertical;
   font-size: var(--fs-sm);
   line-height: 1.15;
+  font-weight: 500;
   color: var(--fg-2);
   text-overflow: ellipsis;
   overflow: hidden;
