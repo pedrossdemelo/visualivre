@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { ResultsEntity } from "@services/products/ProductQuery";
-import Image from "next/image";
 import React, { memo } from "react";
 import styled from "styled-components";
 
@@ -7,20 +7,12 @@ function Product(product: ResultsEntity) {
   return (
     <StyledWrapper onClick={() => window.open(product.permalink, "_blank")}>
       <StyledImageWrapper>
-        <Image
+        <BlurredImg
           aria-hidden="true"
-          className="blur-img-cover"
-          layout="fill"
-          objectFit="cover"
           src={product.thumbnail}
           alt={product.title}
         />
-        <Image
-          layout="fill"
-          objectFit="contain"
-          src={product.thumbnail}
-          alt={product.title}
-        />
+        <ProductImg src={product.thumbnail} alt={product.title} />
       </StyledImageWrapper>
       <StyledPaymentInfo>
         <StyledPrice>
@@ -39,6 +31,24 @@ function Product(product: ResultsEntity) {
     </StyledWrapper>
   );
 }
+
+const ProductImg = styled.img`
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 9;
+`;
+
+const BlurredImg = styled.img`
+  filter: blur(1rem) saturate(1.5) brightness(1.25) contrast(1.1);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+`;
 
 const StyledTitle = styled.h6`
   display: -webkit-box;
@@ -121,7 +131,7 @@ const StyledImageWrapper = styled.div`
   transition: all 0.15s ease-in-out;
   background-color: var(--bg-3);
   ${StyledWrapper}:hover & {
-    margin: -2px;
+    margin: -4px;
     border: 2px solid var(--accent);
   }
 `;

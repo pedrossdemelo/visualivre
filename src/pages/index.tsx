@@ -12,7 +12,9 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   // TODO: Implement less lazy way to update the theme based on the url
+
   const { setTheme } = useTheme();
+
   useEffect(() => {
     if (router.query.theme) setTheme(router.query.theme);
   }, [router.query.theme, setTheme]);
