@@ -7,7 +7,7 @@ function Product(product: ResultsEntity) {
   return (
     <StyledWrapper onClick={() => window.open(product.permalink, "_blank")}>
       <StyledImageWrapper>
-        <BlurredImg
+        <BlurredBackground
           aria-hidden="true"
           src={product.thumbnail}
           alt={product.title}
@@ -41,7 +41,7 @@ const ProductImg = styled.img`
   z-index: 9;
 `;
 
-const BlurredImg = styled.img`
+const BlurredBackground = styled.img`
   filter: blur(1rem) saturate(1.5) brightness(1.125) contrast(1.1);
   object-fit: cover;
   width: 100%;
