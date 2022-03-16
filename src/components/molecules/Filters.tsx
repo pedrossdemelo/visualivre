@@ -12,6 +12,7 @@ import React, { memo } from "react";
 import styled from "styled-components";
 
 function Filters() {
+  // TODO: Implement conditional rendering in CSS
   const smallScreen = useMediaQuery("(max-width: 700px)");
 
   return (
