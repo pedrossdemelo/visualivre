@@ -43,18 +43,14 @@ I also made sure that **all useful filters are included** like price ranges, shi
 ## Screenshots
 
 <div style="display:flex;justify-content:space-around;flex-flow:row wrap;">
-  <kbd>
-    <img
-      src="docs/assets/Light theme.png"
-      title="iOS Demo"
-    >
-  </kbd>
-  <kbd>
-    <img
-      src="docs/assets/Dark theme.png"
-      title="Android Demo"
-    >
-  </kbd>
+  <img
+    src="docs/assets/Light theme.png"
+    title="iOS Demo"
+  >
+  <img
+    src="docs/assets/Dark theme.png"
+    title="Android Demo"
+  >
 </div>
 
 ## Built with
