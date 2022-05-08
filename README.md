@@ -55,11 +55,10 @@ I also made sure that **all useful filters are included** like price ranges, shi
 
 ## Built with
 
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
-- [Reanimated 2](https://docs.swmansion.com/react-native-reanimated/)
-- [React Navigation](https://reactnavigation.org/)
-- [Tailwind RN](https://github.com/jaredh159/tailwind-react-native-classnames)
+- [Next.js](https://nextjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [Redux](https://redux.js.org/)
+- [Redux Toolkit Query](https://redux-toolkit.js.org/)
 
 ## Roadmap
 
