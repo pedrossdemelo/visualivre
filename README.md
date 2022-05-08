@@ -24,7 +24,7 @@
   <br>
 </div>
 
-Hate how MercadoLibre's desktop website only shows 3 listings horizontally? Me too! VisuaLivre solves this annoyance with a responsive listing grid, filling even ultrawide screens!
+Hate how MercadoLibre's desktop website only shows **one (??!!)** listing horizontally? Me too! VisuaLivre solves this annoyance with a responsive listing grid, filling even ultrawide screens!
 
 <img src="https://user-images.githubusercontent.com/83181309/167303722-467898e7-4e19-4a06-8851-a34ac64aeb6f.png" width="100%" alt="Mercado Libre and VisuaLivre website comparison">
 
