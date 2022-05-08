@@ -28,6 +28,10 @@ Hate how MercadoLibre's desktop website only shows 3 listings horizontally? Me t
 
 I also made sure that **all useful filters are included** like price ranges, shipping costs and item condition. It has some cool added features like query caching, so coming back to your previous queries is instantaneous.
 
+<br>
+
+<img src="https://user-images.githubusercontent.com/83181309/167303722-467898e7-4e19-4a06-8851-a34ac64aeb6f.png" width="100%" alt="Mercado Libre and VisuaLivre website comparison">
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
