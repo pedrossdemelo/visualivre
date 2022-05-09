@@ -70,6 +70,7 @@ I also made sure that **all useful filters are included** like price ranges, shi
 - [x] Price range filters
 - [x] Condition filters
 - [x] Shipping filters
+- [x] Infinite scrolling
 - [x] Dark theme
 - [ ] Dynamic URL query params
 
