@@ -76,7 +76,7 @@ I also made sure that **all useful filters are included** like price ranges, shi
 
 ## Known issues
 
-These no known issues at the moment. If you find one, please [open an issue](https://github.com/PedroSSM2000/visualivre/issues), it would be greatly appreciated!
+These no known issues at the moment. If you find one, please [open an issue](https://github.com/pedrossdemelo/visualivre/issues), it would be greatly appreciated!
 
 ## License
 
@@ -88,15 +88,15 @@ Distributed under the GPL 3.0 License. See `LICENSE` for more information.
 
 <p align="right"><a href="#top">Back to top</a></p>
 
-[contributors-shield]: https://img.shields.io/github/contributors/PedroSSM2000/visualivre?style=for-the-badge
-[contributors-url]: https://github.com/PedroSSM2000/visualivre/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/PedroSSM2000/visualivre?style=for-the-badge
-[forks-url]: https://github.com/PedroSSM2000/visualivre/network/members
-[stars-shield]: https://img.shields.io/github/stars/PedroSSM2000/visualivre?style=for-the-badge
-[stars-url]: https://github.com/PedroSSM2000/visualivre/stargazers
-[issues-shield]: https://img.shields.io/github/issues/PedroSSM2000/visualivre?style=for-the-badge
-[issues-url]: https://github.com/PedroSSM2000/visualivre/issues
-[license-shield]: https://img.shields.io/github/license/PedroSSM2000/visualivre?style=for-the-badge
-[license-url]: https://github.com/PedroSSM2000/visualivre/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/pedrossdemelo/visualivre?style=for-the-badge
+[contributors-url]: https://github.com/pedrossdemelo/visualivre/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/pedrossdemelo/visualivre?style=for-the-badge
+[forks-url]: https://github.com/pedrossdemelo/visualivre/network/members
+[stars-shield]: https://img.shields.io/github/stars/pedrossdemelo/visualivre?style=for-the-badge
+[stars-url]: https://github.com/pedrossdemelo/visualivre/stargazers
+[issues-shield]: https://img.shields.io/github/issues/pedrossdemelo/visualivre?style=for-the-badge
+[issues-url]: https://github.com/pedrossdemelo/visualivre/issues
+[license-shield]: https://img.shields.io/github/license/pedrossdemelo/visualivre?style=for-the-badge
+[license-url]: https://github.com/pedrossdemelo/visualivre/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/pedrossdemelo/
