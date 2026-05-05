@@ -1,3 +1,4 @@
+import { getMercadoLibreToken } from "lib/mlToken";
 import { Filters, Results } from "@molecules";
 import { Sidebar } from "@organisms";
 import type { InferGetStaticPropsType } from "next";
@@ -36,7 +37,13 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://api.mercadolibre.com/sites/MLB/categories");
+  const headers: HeadersInit = {};
+  const token = await getMercadoLibreToken();
+  if (token) headers["Authorization"] = `Bearer ${token}`;
+
+  const res = await fetch("https://api.mercadolibre.com/sites/MLB/categories", {
+    headers,
+  });
   const categories = await res.json();
 
   return {

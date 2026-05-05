@@ -29,14 +29,11 @@ function Results() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(
-        "https://api.mercadolibre.com/sites/MLB/search?" +
-          formattedQuery +
-          "&offset=" +
-          offset
-      );
+      const res = await fetch(`/api/search?${formattedQuery}&offset=${offset}`);
+      if (!res.ok) return;
       const { results: newResults } = await res.json();
-      setResults([...extraResults, ...newResults]);
+      if (!newResults) return;
+      setResults(prev => [...prev, ...newResults]);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset]);
